@@ -152,5 +152,12 @@ namespace WordPadAM
             Font f = rtxDocumento.Font;
             rtxDocumento.SelectionFont = new Font(cmbFont.Text, f.Size, f.Style);
         }
+
+        private void BtnJustify_Click(object sender, EventArgs e)
+        {
+            Font f = rtxDocumento.Font;
+            rtxDocumento.Text = wordPad.JustifyParagraph(rtxDocumento.Text, rtxDocumento.Font, rtxDocumento.Width);
+            rtxDocumento.Font = new Font(f.Name, f.Size, f.Style);
+        }
     }
 }
