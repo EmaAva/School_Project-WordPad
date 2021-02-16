@@ -17,7 +17,7 @@ namespace WordPadAM
             InitializeComponent();
         }
         clsOperazioni wordPad = new clsOperazioni();
-        
+
 
         private void WordPadAM_Load(object sender, EventArgs e)
         {
@@ -137,20 +137,26 @@ namespace WordPadAM
 
         private void cmbSize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Font f = rtxDocumento.Font;
+
             try
             {
-                rtxDocumento.SelectionFont = new Font(f.FontFamily, Convert.ToInt32(cmbSize.Text), f.Style);
+                rtxDocumento.SelectionFont = new Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
             }
         }
         private void cmbFont_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Font f = rtxDocumento.Font;
-            rtxDocumento.SelectionFont = new Font(cmbFont.Text, f.Size, f.Style);
+
+            try
+            {
+                rtxDocumento.SelectionFont = new Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
+            }
+            catch (Exception)
+            {
+            }
+
         }
 
         private void BtnJustify_Click(object sender, EventArgs e)
@@ -166,7 +172,7 @@ namespace WordPadAM
             dlgImage.FileName = "*.jpg,*.jpeg,*.png,*.bmp";
             dlgImage.Filter = "Immagine(*.jpg)|*.jpg|(*.jpeg)|*.jpeg|(*.png)|*.png|(*.bmp)|*.bmp|Tutti i files|*.*";
             DialogResult ris = dlgImage.ShowDialog();
-            if (ris==DialogResult.OK && dlgImage.FileName != "")
+            if (ris == DialogResult.OK && dlgImage.FileName != "")
             {
                 string picFile = dlgImage.FileName;
                 Bitmap pic = new Bitmap(picFile);
