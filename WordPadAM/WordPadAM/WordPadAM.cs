@@ -159,5 +159,32 @@ namespace WordPadAM
             rtxDocumento.Text = wordPad.JustifyParagraph(rtxDocumento.Text, rtxDocumento.Font, rtxDocumento.Width);
             rtxDocumento.Font = new Font(f.Name, f.Size, f.Style);
         }
+
+        private void btnImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlgImage = new OpenFileDialog();
+            dlgImage.FileName = "*.jpg,*.jpeg,*.png,*.bmp";
+            dlgImage.Filter = "Immagine(*.jpg)|*.jpg|(*.jpeg)|*.jpeg|(*.png)|*.png|(*.bmp)|*.bmp|Tutti i files|*.*";
+            DialogResult ris = dlgImage.ShowDialog();
+            if (ris==DialogResult.OK && dlgImage.FileName != "")
+            {
+                string picFile = dlgImage.FileName;
+                Bitmap pic = new Bitmap(picFile);
+                Clipboard.SetDataObject(pic);
+                DataFormats.Format fmt = DataFormats.GetFormat(DataFormats.Bitmap);
+                if (rtxDocumento.CanPaste(fmt))
+                {
+                    rtxDocumento.Paste(fmt);
+                }
+                else
+                {
+                    MessageBox.Show("Warning, an error has occurred");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Warning, an error has occurred");
+            }
+        }
     }
 }

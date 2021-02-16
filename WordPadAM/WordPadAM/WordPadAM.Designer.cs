@@ -55,6 +55,8 @@
             this.btnNewDoc = new System.Windows.Forms.ToolStripButton();
             this.btnOpenDoc = new System.Windows.Forms.ToolStripButton();
             this.btnSaveDoc = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnImage = new System.Windows.Forms.ToolStripButton();
             this.tls1.SuspendLayout();
             this.tls2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -73,10 +75,12 @@
             this.toolStripSeparator2,
             this.btnJustify,
             this.btnBulletList,
-            this.btnLineSpacing});
+            this.btnLineSpacing,
+            this.toolStripSeparator3,
+            this.btnImage});
             this.tls1.Location = new System.Drawing.Point(3, 3);
             this.tls1.Name = "tls1";
-            this.tls1.Size = new System.Drawing.Size(364, 25);
+            this.tls1.Size = new System.Drawing.Size(393, 25);
             this.tls1.TabIndex = 0;
             this.tls1.Text = "toolStrip1";
             // 
@@ -161,7 +165,7 @@
             this.btnRight});
             this.tls2.Location = new System.Drawing.Point(3, 28);
             this.tls2.Name = "tls2";
-            this.tls2.Size = new System.Drawing.Size(338, 25);
+            this.tls2.Size = new System.Drawing.Size(333, 25);
             this.tls2.TabIndex = 1;
             this.tls2.Text = "toolStrip2";
             // 
@@ -207,7 +211,7 @@
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(159, 0, 0, 0);
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(154, 0, 0, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
@@ -325,6 +329,21 @@
             this.btnSaveDoc.Size = new System.Drawing.Size(23, 22);
             this.btnSaveDoc.Text = "&Save";
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnImage
+            // 
+            this.btnImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImage.Image = ((System.Drawing.Image)(resources.GetObject("btnImage.Image")));
+            this.btnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(23, 22);
+            this.btnImage.Text = "Image";
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            // 
             // WordPadAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,6 +397,8 @@
         private System.Windows.Forms.ToolStripButton btnSaveDoc;
         private System.Windows.Forms.ToolStripButton btnJustify;
         private System.Windows.Forms.ToolStripButton btnLineSpacing;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton btnImage;
     }
 }
 
