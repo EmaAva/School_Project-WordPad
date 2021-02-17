@@ -37,7 +37,16 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnJustify = new System.Windows.Forms.ToolStripButton();
             this.btnBulletList = new System.Windows.Forms.ToolStripButton();
-            this.btnLineSpacing = new System.Windows.Forms.ToolStripButton();
+            this.btnLeftIndent = new System.Windows.Forms.ToolStripSplitButton();
+            this.L10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.L15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.L25 = new System.Windows.Forms.ToolStripMenuItem();
+            this.L50 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRigthIndent = new System.Windows.Forms.ToolStripSplitButton();
+            this.R10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.R15 = new System.Windows.Forms.ToolStripMenuItem();
+            this.R25 = new System.Windows.Forms.ToolStripMenuItem();
+            this.R50 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.btnImage = new System.Windows.Forms.ToolStripButton();
             this.tls2 = new System.Windows.Forms.ToolStrip();
@@ -53,6 +62,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.View = new System.Windows.Forms.TabPage();
+            this.btnZoomOut = new System.Windows.Forms.Button();
+            this.btnZoomIn = new System.Windows.Forms.Button();
             this.MailTls = new System.Windows.Forms.ToolStrip();
             this.btnNewDoc = new System.Windows.Forms.ToolStripButton();
             this.btnOpenDoc = new System.Windows.Forms.ToolStripButton();
@@ -63,6 +74,7 @@
             this.tls2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Home.SuspendLayout();
+            this.View.SuspendLayout();
             this.MailTls.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,12 +89,13 @@
             this.toolStripSeparator2,
             this.btnJustify,
             this.btnBulletList,
-            this.btnLineSpacing,
+            this.btnLeftIndent,
+            this.btnRigthIndent,
             this.toolStripSeparator3,
             this.btnImage});
             this.tls1.Location = new System.Drawing.Point(3, 3);
             this.tls1.Name = "tls1";
-            this.tls1.Size = new System.Drawing.Size(393, 25);
+            this.tls1.Size = new System.Drawing.Size(403, 25);
             this.tls1.TabIndex = 0;
             this.tls1.Text = "toolStrip1";
             // 
@@ -144,14 +157,91 @@
             this.btnBulletList.Text = "Bullet List";
             this.btnBulletList.Click += new System.EventHandler(this.btnBulletList_Click);
             // 
-            // btnLineSpacing
+            // btnLeftIndent
             // 
-            this.btnLineSpacing.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnLineSpacing.Image = ((System.Drawing.Image)(resources.GetObject("btnLineSpacing.Image")));
-            this.btnLineSpacing.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnLineSpacing.Name = "btnLineSpacing";
-            this.btnLineSpacing.Size = new System.Drawing.Size(23, 22);
-            this.btnLineSpacing.Text = "Line Spacing";
+            this.btnLeftIndent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnLeftIndent.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.L10,
+            this.L15,
+            this.L25,
+            this.L50});
+            this.btnLeftIndent.Image = ((System.Drawing.Image)(resources.GetObject("btnLeftIndent.Image")));
+            this.btnLeftIndent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLeftIndent.Name = "btnLeftIndent";
+            this.btnLeftIndent.Size = new System.Drawing.Size(32, 22);
+            this.btnLeftIndent.Text = "toolStripSplitButton1";
+            this.btnLeftIndent.ToolTipText = "Left Ident";
+            // 
+            // L10
+            // 
+            this.L10.Name = "L10";
+            this.L10.Size = new System.Drawing.Size(180, 22);
+            this.L10.Text = "1.10";
+            this.L10.Click += new System.EventHandler(this.btnLeftIndent_Click);
+            // 
+            // L15
+            // 
+            this.L15.Name = "L15";
+            this.L15.Size = new System.Drawing.Size(180, 22);
+            this.L15.Text = "1.15";
+            this.L15.Click += new System.EventHandler(this.btnLeftIndent_Click);
+            // 
+            // L25
+            // 
+            this.L25.Name = "L25";
+            this.L25.Size = new System.Drawing.Size(180, 22);
+            this.L25.Text = "1.25";
+            this.L25.Click += new System.EventHandler(this.btnLeftIndent_Click);
+            // 
+            // L50
+            // 
+            this.L50.Name = "L50";
+            this.L50.Size = new System.Drawing.Size(180, 22);
+            this.L50.Text = "1.50";
+            this.L50.Click += new System.EventHandler(this.btnLeftIndent_Click);
+            // 
+            // btnRigthIndent
+            // 
+            this.btnRigthIndent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRigthIndent.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.R10,
+            this.R15,
+            this.R25,
+            this.R50});
+            this.btnRigthIndent.Image = ((System.Drawing.Image)(resources.GetObject("btnRigthIndent.Image")));
+            this.btnRigthIndent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRigthIndent.Name = "btnRigthIndent";
+            this.btnRigthIndent.Size = new System.Drawing.Size(32, 22);
+            this.btnRigthIndent.Text = "toolStripSplitButton2";
+            this.btnRigthIndent.ToolTipText = "Right Indent";
+            // 
+            // R10
+            // 
+            this.R10.Name = "R10";
+            this.R10.Size = new System.Drawing.Size(180, 22);
+            this.R10.Text = "1.10";
+            this.R10.Click += new System.EventHandler(this.btnRigthIndent_Click);
+            // 
+            // R15
+            // 
+            this.R15.Name = "R15";
+            this.R15.Size = new System.Drawing.Size(180, 22);
+            this.R15.Text = "1.15";
+            this.R15.Click += new System.EventHandler(this.btnRigthIndent_Click);
+            // 
+            // R25
+            // 
+            this.R25.Name = "R25";
+            this.R25.Size = new System.Drawing.Size(180, 22);
+            this.R25.Text = "1.25";
+            this.R25.Click += new System.EventHandler(this.btnRigthIndent_Click);
+            // 
+            // R50
+            // 
+            this.R50.Name = "R50";
+            this.R50.Size = new System.Drawing.Size(180, 22);
+            this.R50.Text = "1.50";
+            this.R50.Click += new System.EventHandler(this.btnRigthIndent_Click);
             // 
             // toolStripSeparator3
             // 
@@ -299,6 +389,8 @@
             // 
             // View
             // 
+            this.View.Controls.Add(this.btnZoomOut);
+            this.View.Controls.Add(this.btnZoomIn);
             this.View.Location = new System.Drawing.Point(4, 22);
             this.View.Name = "View";
             this.View.Padding = new System.Windows.Forms.Padding(3);
@@ -306,6 +398,27 @@
             this.View.TabIndex = 1;
             this.View.Text = "View";
             this.View.UseVisualStyleBackColor = true;
+            // 
+            // btnZoomOut
+            // 
+            this.btnZoomOut.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomOut.Image")));
+            this.btnZoomOut.Location = new System.Drawing.Point(62, 4);
+            this.btnZoomOut.Name = "btnZoomOut";
+            this.btnZoomOut.Size = new System.Drawing.Size(50, 50);
+            this.btnZoomOut.TabIndex = 0;
+            this.btnZoomOut.UseVisualStyleBackColor = true;
+            this.btnZoomOut.Click += new System.EventHandler(this.btnZoomOut_Click);
+            // 
+            // btnZoomIn
+            // 
+            this.btnZoomIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnZoomIn.Image = ((System.Drawing.Image)(resources.GetObject("btnZoomIn.Image")));
+            this.btnZoomIn.Location = new System.Drawing.Point(6, 4);
+            this.btnZoomIn.Name = "btnZoomIn";
+            this.btnZoomIn.Size = new System.Drawing.Size(50, 50);
+            this.btnZoomIn.TabIndex = 0;
+            this.btnZoomIn.UseVisualStyleBackColor = true;
+            this.btnZoomIn.Click += new System.EventHandler(this.btnZoomIn_Click);
             // 
             // MailTls
             // 
@@ -384,6 +497,7 @@
             this.tabControl1.ResumeLayout(false);
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
+            this.View.ResumeLayout(false);
             this.MailTls.ResumeLayout(false);
             this.MailTls.PerformLayout();
             this.ResumeLayout(false);
@@ -418,11 +532,22 @@
         private System.Windows.Forms.ToolStripButton btnOpenDoc;
         private System.Windows.Forms.ToolStripButton btnSaveDoc;
         private System.Windows.Forms.ToolStripButton btnJustify;
-        private System.Windows.Forms.ToolStripButton btnLineSpacing;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnImage;
         private System.Windows.Forms.ToolStripButton btnPrintDoc;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripSplitButton btnLeftIndent;
+        private System.Windows.Forms.ToolStripMenuItem L10;
+        private System.Windows.Forms.ToolStripMenuItem L15;
+        private System.Windows.Forms.ToolStripMenuItem L25;
+        private System.Windows.Forms.ToolStripMenuItem L50;
+        private System.Windows.Forms.ToolStripSplitButton btnRigthIndent;
+        private System.Windows.Forms.ToolStripMenuItem R10;
+        private System.Windows.Forms.ToolStripMenuItem R15;
+        private System.Windows.Forms.ToolStripMenuItem R25;
+        private System.Windows.Forms.ToolStripMenuItem R50;
+        private System.Windows.Forms.Button btnZoomOut;
+        private System.Windows.Forms.Button btnZoomIn;
     }
 }
 

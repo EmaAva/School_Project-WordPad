@@ -97,8 +97,7 @@ namespace Es05EditorHTML
             // -Colore
             // -Rettangolo di stampa
             e.Graphics.DrawString(userText, userFont, b, rect);
-            Pen penna = new Pen(Color.Red, 2);
-            e.Graphics.DrawRectangle(penna, rect);
+
         }
     }
 }

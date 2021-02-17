@@ -25,6 +25,7 @@ namespace WordPadAM
         {
             wordPad.caricaFont(cmbFont);
             wordPad.caricaSize(cmbSize);
+            this.Text = "Nuovo documento di testo* - W O R D P A D";
         }
 
         private void btnFontUp_Click(object sender, EventArgs e)
@@ -197,7 +198,7 @@ namespace WordPadAM
 
         private void BtnSaveDoc_Click(object sender, EventArgs e)
         {
-            wordPad.salvaConNome(rtxDocumento.Rtf);
+            wordPad.salvaConNome(rtxDocumento.Rtf, this);
         }
 
         private void BtnOpenDoc_Click(object sender, EventArgs e)
@@ -210,6 +211,7 @@ namespace WordPadAM
             {
                 string txtFile = txt.FileName;
                 rtxDocumento.Rtf = File.ReadAllText(txtFile);
+                this.Text = txtFile + " -  W O R D P A D";
             }
             else
             {
@@ -220,14 +222,142 @@ namespace WordPadAM
         private void BtnNewDoc_Click(object sender, EventArgs e)
         {
             rtxDocumento.Rtf = "";
+            this.Text = "Nuovo documento di testo* - W O R D P A D";
         }
-
+        //Bitmap bmp;
         private void BtnPrintDoc_Click(object sender, EventArgs e)
         {
             clsStampa print = new clsStampa();
             print.impostaPagina();
             print.anteprima(rtxDocumento.Rtf, rtxDocumento.Font);
-            print.Stampa(rtxDocumento.Rtf, rtxDocumento.Font);
+            //print.Stampa(rtxDocumento.Rtf, rtxDocumento.Font);
+            /*Graphics g = rtxDocumento.CreateGraphics();
+            bmp = new Bitmap(rtxDocumento.Size.Width, rtxDocumento.Size.Height, g);
+            Graphics mg = Graphics.FromImage(bmp);
+            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
+            printPreviewDialog1.ShowDialog();*/
+
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp,0,0);
+        }
+
+        private void btnLeftIndent_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem btn = (ToolStripMenuItem)sender;
+            switch (btn.Name)
+            {
+                case "L10":
+                    if (rtxDocumento.SelectionIndent==10)
+                    {
+                        rtxDocumento.SelectionIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionIndent = 10;
+                    }
+                    break;
+                case "L15":
+                    if (rtxDocumento.SelectionIndent == 15)
+                    {
+                        rtxDocumento.SelectionIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionIndent = 15;
+                    }
+                    break;
+                case "L25":
+                    if (rtxDocumento.SelectionIndent == 25)
+                    {
+                        rtxDocumento.SelectionIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionIndent = 25;
+                    }
+                    break;
+                case "L50":
+                    if (rtxDocumento.SelectionIndent == 50)
+                    {
+                        rtxDocumento.SelectionIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionIndent = 50;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnRigthIndent_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem btn = (ToolStripMenuItem)sender;
+            switch (btn.Name)
+            {
+                case "R10":
+                    if (rtxDocumento.SelectionRightIndent==10)
+                    {
+                        rtxDocumento.SelectionRightIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionRightIndent = 10;
+                    }
+                    break;
+                case "R15":
+                    if (rtxDocumento.SelectionRightIndent == 15)
+                    {
+                        rtxDocumento.SelectionRightIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionRightIndent = 15;
+                    }
+                    break;
+                case "R25":
+                    if (rtxDocumento.SelectionRightIndent == 25)
+                    {
+                        rtxDocumento.SelectionRightIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionRightIndent = 25;
+                    }
+                    break;
+                case "R50":
+                    if (rtxDocumento.SelectionRightIndent == 50)
+                    {
+                        rtxDocumento.SelectionRightIndent = 0;
+                    }
+                    else
+                    {
+                        rtxDocumento.SelectionRightIndent = 50;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void btnZoomIn_Click(object sender, EventArgs e)
+        {
+            if (rtxDocumento.ZoomFactor < 64.5)
+            {
+                rtxDocumento.ZoomFactor = rtxDocumento.ZoomFactor + (float)0.5;
+            }
+        }
+
+        private void btnZoomOut_Click(object sender, EventArgs e)
+        {
+            if (rtxDocumento.ZoomFactor > 0.515625)
+            {
+                rtxDocumento.ZoomFactor = rtxDocumento.ZoomFactor +(float) -0.5;
+            }
         }
     }
 }

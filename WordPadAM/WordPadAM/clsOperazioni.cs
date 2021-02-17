@@ -108,7 +108,7 @@ namespace WordPadAM
                 return AdjustedWords.TrimEnd();
             }))();
         }
-        public bool salvaConNome(string testo)
+        public bool salvaConNome(string testo, WordPadAM wordPadAM)
         {
             bool ok = false;
             SaveFileDialog dlgSalva = new SaveFileDialog();
@@ -120,6 +120,7 @@ namespace WordPadAM
                 string s = dlgSalva.FileName;
                 scriviSuFile(testo, s);
                 ok = true;
+                wordPadAM.Text = dlgSalva.FileName+" - W O R D P A D";
             }
             return ok;
         }

@@ -4,3 +4,6 @@ A school project made by Roberto Mottura and Emanuele Avataneo. A WordPad alike 
 Image Loading added
 ## V 0.7.1
 Important bug fix related to font family and font size
+## V 1.0.1
+Added some functions(Zoom In, Zoom Out...) and GUI improvements
+    
