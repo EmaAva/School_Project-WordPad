@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Es05EditorHTML;
 
 namespace WordPadAM
 {
@@ -196,7 +197,7 @@ namespace WordPadAM
 
         private void BtnSaveDoc_Click(object sender, EventArgs e)
         {
-            SaveFileDialog file = new SaveFileDialog();
+            wordPad.salvaConNome(rtxDocumento.Rtf);
         }
 
         private void BtnOpenDoc_Click(object sender, EventArgs e)
@@ -218,7 +219,15 @@ namespace WordPadAM
 
         private void BtnNewDoc_Click(object sender, EventArgs e)
         {
-            rtxDocumento.Text = "";
+            rtxDocumento.Rtf = "";
+        }
+
+        private void BtnPrintDoc_Click(object sender, EventArgs e)
+        {
+            clsStampa print = new clsStampa();
+            print.impostaPagina();
+            print.anteprima(rtxDocumento.Rtf, rtxDocumento.Font);
+            print.Stampa(rtxDocumento.Rtf, rtxDocumento.Font);
         }
     }
 }

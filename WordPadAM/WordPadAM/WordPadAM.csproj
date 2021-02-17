@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsOperazioni.cs" />
+    <Compile Include="clsStampa.cs" />
     <Compile Include="WordPadAM.cs">
       <SubType>Form</SubType>
     </Compile>

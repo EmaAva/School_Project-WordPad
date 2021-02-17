@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
 
 namespace WordPadAM
 {
@@ -106,6 +107,30 @@ namespace WordPadAM
                 }
                 return AdjustedWords.TrimEnd();
             }))();
+        }
+        public bool salvaConNome(string testo)
+        {
+            bool ok = false;
+            SaveFileDialog dlgSalva = new SaveFileDialog();
+            dlgSalva.FileName = "*.rtf";
+            dlgSalva.Filter = "Documento di testo (*.rtf)|*.rtf|Tutti i Files|*.*";
+            DialogResult ris = dlgSalva.ShowDialog();
+            if (ris == DialogResult.OK && dlgSalva.FileName != "")
+            {
+                string s = dlgSalva.FileName;
+                scriviSuFile(testo, s);
+                ok = true;
+            }
+            return ok;
+        }
+        private void scriviSuFile(string testo, string s)
+        {
+            if (s != "")
+            {
+                StreamWriter sw = new StreamWriter(s);
+                sw.Write(testo);
+                sw.Close();
+            }
         }
     }
 }

@@ -57,6 +57,8 @@
             this.btnNewDoc = new System.Windows.Forms.ToolStripButton();
             this.btnOpenDoc = new System.Windows.Forms.ToolStripButton();
             this.btnSaveDoc = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintDoc = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tls1.SuspendLayout();
             this.tls2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -80,7 +82,7 @@
             this.btnImage});
             this.tls1.Location = new System.Drawing.Point(3, 3);
             this.tls1.Name = "tls1";
-            this.tls1.Size = new System.Drawing.Size(362, 25);
+            this.tls1.Size = new System.Drawing.Size(393, 25);
             this.tls1.TabIndex = 0;
             this.tls1.Text = "toolStrip1";
             // 
@@ -149,7 +151,7 @@
             this.btnLineSpacing.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLineSpacing.Name = "btnLineSpacing";
             this.btnLineSpacing.Size = new System.Drawing.Size(23, 22);
-            this.btnLineSpacing.Text = "toolStripButton1";
+            this.btnLineSpacing.Text = "Line Spacing";
             // 
             // toolStripSeparator3
             // 
@@ -310,7 +312,9 @@
             this.MailTls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnNewDoc,
             this.btnOpenDoc,
-            this.btnSaveDoc});
+            this.btnSaveDoc,
+            this.btnPrintDoc,
+            this.toolStripSeparator});
             this.MailTls.Location = new System.Drawing.Point(0, 0);
             this.MailTls.Name = "MailTls";
             this.MailTls.Size = new System.Drawing.Size(800, 25);
@@ -346,6 +350,21 @@
             this.btnSaveDoc.Size = new System.Drawing.Size(23, 22);
             this.btnSaveDoc.Text = "&Save";
             this.btnSaveDoc.Click += new System.EventHandler(this.BtnSaveDoc_Click);
+            // 
+            // btnPrintDoc
+            // 
+            this.btnPrintDoc.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrintDoc.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintDoc.Image")));
+            this.btnPrintDoc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintDoc.Name = "btnPrintDoc";
+            this.btnPrintDoc.Size = new System.Drawing.Size(23, 22);
+            this.btnPrintDoc.Text = "&Print";
+            this.btnPrintDoc.Click += new System.EventHandler(this.BtnPrintDoc_Click);
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
             // 
             // WordPadAM
             // 
@@ -402,6 +421,8 @@
         private System.Windows.Forms.ToolStripButton btnLineSpacing;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton btnImage;
+        private System.Windows.Forms.ToolStripButton btnPrintDoc;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
     }
 }
 
