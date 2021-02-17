@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WordPadAM
 {
@@ -191,6 +192,33 @@ namespace WordPadAM
             {
                 MessageBox.Show("Warning, an error has occurred");
             }
+        }
+
+        private void BtnSaveDoc_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog file = new SaveFileDialog();
+        }
+
+        private void BtnOpenDoc_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog txt = new OpenFileDialog();
+            txt.FileName = "*.rtf";
+            txt.Filter = "Testo(*.rtf)|*.rtf|Tutti i files|*.*";
+            DialogResult ris = txt.ShowDialog();
+            if (ris == DialogResult.OK && txt.FileName != "")
+            {
+                string txtFile = txt.FileName;
+                rtxDocumento.Rtf = File.ReadAllText(txtFile);
+            }
+            else
+            {
+                MessageBox.Show("Warning, an error has occurred");
+            }
+        }
+
+        private void BtnNewDoc_Click(object sender, EventArgs e)
+        {
+            rtxDocumento.Text = "";
         }
     }
 }

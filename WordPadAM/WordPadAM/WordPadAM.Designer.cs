@@ -38,6 +38,8 @@
             this.btnJustify = new System.Windows.Forms.ToolStripButton();
             this.btnBulletList = new System.Windows.Forms.ToolStripButton();
             this.btnLineSpacing = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnImage = new System.Windows.Forms.ToolStripButton();
             this.tls2 = new System.Windows.Forms.ToolStrip();
             this.btnBold = new System.Windows.Forms.ToolStripButton();
             this.btnItalic = new System.Windows.Forms.ToolStripButton();
@@ -55,8 +57,6 @@
             this.btnNewDoc = new System.Windows.Forms.ToolStripButton();
             this.btnOpenDoc = new System.Windows.Forms.ToolStripButton();
             this.btnSaveDoc = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnImage = new System.Windows.Forms.ToolStripButton();
             this.tls1.SuspendLayout();
             this.tls2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -80,7 +80,7 @@
             this.btnImage});
             this.tls1.Location = new System.Drawing.Point(3, 3);
             this.tls1.Name = "tls1";
-            this.tls1.Size = new System.Drawing.Size(393, 25);
+            this.tls1.Size = new System.Drawing.Size(362, 25);
             this.tls1.TabIndex = 0;
             this.tls1.Text = "toolStrip1";
             // 
@@ -150,6 +150,21 @@
             this.btnLineSpacing.Name = "btnLineSpacing";
             this.btnLineSpacing.Size = new System.Drawing.Size(23, 22);
             this.btnLineSpacing.Text = "toolStripButton1";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // btnImage
+            // 
+            this.btnImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnImage.Image = ((System.Drawing.Image)(resources.GetObject("btnImage.Image")));
+            this.btnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnImage.Name = "btnImage";
+            this.btnImage.Size = new System.Drawing.Size(23, 22);
+            this.btnImage.Text = "Image";
+            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
             // 
             // tls2
             // 
@@ -310,6 +325,7 @@
             this.btnNewDoc.Name = "btnNewDoc";
             this.btnNewDoc.Size = new System.Drawing.Size(23, 22);
             this.btnNewDoc.Text = "&New";
+            this.btnNewDoc.Click += new System.EventHandler(this.BtnNewDoc_Click);
             // 
             // btnOpenDoc
             // 
@@ -319,6 +335,7 @@
             this.btnOpenDoc.Name = "btnOpenDoc";
             this.btnOpenDoc.Size = new System.Drawing.Size(23, 22);
             this.btnOpenDoc.Text = "&Open";
+            this.btnOpenDoc.Click += new System.EventHandler(this.BtnOpenDoc_Click);
             // 
             // btnSaveDoc
             // 
@@ -328,21 +345,7 @@
             this.btnSaveDoc.Name = "btnSaveDoc";
             this.btnSaveDoc.Size = new System.Drawing.Size(23, 22);
             this.btnSaveDoc.Text = "&Save";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnImage
-            // 
-            this.btnImage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnImage.Image = ((System.Drawing.Image)(resources.GetObject("btnImage.Image")));
-            this.btnImage.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnImage.Name = "btnImage";
-            this.btnImage.Size = new System.Drawing.Size(23, 22);
-            this.btnImage.Text = "Image";
-            this.btnImage.Click += new System.EventHandler(this.btnImage_Click);
+            this.btnSaveDoc.Click += new System.EventHandler(this.BtnSaveDoc_Click);
             // 
             // WordPadAM
             // 
