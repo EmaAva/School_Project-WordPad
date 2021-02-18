@@ -175,28 +175,28 @@
             // L10
             // 
             this.L10.Name = "L10";
-            this.L10.Size = new System.Drawing.Size(180, 22);
+            this.L10.Size = new System.Drawing.Size(95, 22);
             this.L10.Text = "1.10";
             this.L10.Click += new System.EventHandler(this.btnLeftIndent_Click);
             // 
             // L15
             // 
             this.L15.Name = "L15";
-            this.L15.Size = new System.Drawing.Size(180, 22);
+            this.L15.Size = new System.Drawing.Size(95, 22);
             this.L15.Text = "1.15";
             this.L15.Click += new System.EventHandler(this.btnLeftIndent_Click);
             // 
             // L25
             // 
             this.L25.Name = "L25";
-            this.L25.Size = new System.Drawing.Size(180, 22);
+            this.L25.Size = new System.Drawing.Size(95, 22);
             this.L25.Text = "1.25";
             this.L25.Click += new System.EventHandler(this.btnLeftIndent_Click);
             // 
             // L50
             // 
             this.L50.Name = "L50";
-            this.L50.Size = new System.Drawing.Size(180, 22);
+            this.L50.Size = new System.Drawing.Size(95, 22);
             this.L50.Text = "1.50";
             this.L50.Click += new System.EventHandler(this.btnLeftIndent_Click);
             // 
@@ -218,28 +218,28 @@
             // R10
             // 
             this.R10.Name = "R10";
-            this.R10.Size = new System.Drawing.Size(180, 22);
+            this.R10.Size = new System.Drawing.Size(95, 22);
             this.R10.Text = "1.10";
             this.R10.Click += new System.EventHandler(this.btnRigthIndent_Click);
             // 
             // R15
             // 
             this.R15.Name = "R15";
-            this.R15.Size = new System.Drawing.Size(180, 22);
+            this.R15.Size = new System.Drawing.Size(95, 22);
             this.R15.Text = "1.15";
             this.R15.Click += new System.EventHandler(this.btnRigthIndent_Click);
             // 
             // R25
             // 
             this.R25.Name = "R25";
-            this.R25.Size = new System.Drawing.Size(180, 22);
+            this.R25.Size = new System.Drawing.Size(95, 22);
             this.R25.Text = "1.25";
             this.R25.Click += new System.EventHandler(this.btnRigthIndent_Click);
             // 
             // R50
             // 
             this.R50.Name = "R50";
-            this.R50.Size = new System.Drawing.Size(180, 22);
+            this.R50.Size = new System.Drawing.Size(95, 22);
             this.R50.Text = "1.50";
             this.R50.Click += new System.EventHandler(this.btnRigthIndent_Click);
             // 
@@ -362,6 +362,7 @@
             this.rtxDocumento.Size = new System.Drawing.Size(776, 318);
             this.rtxDocumento.TabIndex = 2;
             this.rtxDocumento.Text = "";
+            this.rtxDocumento.TextChanged += new System.EventHandler(this.RtxDocumento_TextChanged);
             // 
             // tabControl1
             // 
@@ -488,7 +489,7 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.rtxDocumento);
             this.Name = "WordPadAM";
-            this.Text = "W O R D P A D";
+            this.Text = "ER P A D";
             this.Load += new System.EventHandler(this.WordPadAM_Load);
             this.tls1.ResumeLayout(false);
             this.tls1.PerformLayout();

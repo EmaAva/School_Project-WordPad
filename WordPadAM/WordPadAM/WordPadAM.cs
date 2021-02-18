@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using Es05EditorHTML;
+using printhelper;
 
 namespace WordPadAM
 {
@@ -25,7 +25,7 @@ namespace WordPadAM
         {
             wordPad.caricaFont(cmbFont);
             wordPad.caricaSize(cmbSize);
-            this.Text = "Nuovo documento di testo* - W O R D P A D";
+            this.Text = "Nuovo documento di testo* - ER P A D";
         }
 
         private void btnFontUp_Click(object sender, EventArgs e)
@@ -211,7 +211,7 @@ namespace WordPadAM
             {
                 string txtFile = txt.FileName;
                 rtxDocumento.Rtf = File.ReadAllText(txtFile);
-                this.Text = txtFile + " -  W O R D P A D";
+                this.Text = txtFile + " -  ER P A D";
             }
             else
             {
@@ -222,26 +222,13 @@ namespace WordPadAM
         private void BtnNewDoc_Click(object sender, EventArgs e)
         {
             rtxDocumento.Rtf = "";
-            this.Text = "Nuovo documento di testo* - W O R D P A D";
+            this.Text = "Nuovo documento di testo* - ER P A D";
         }
-        //Bitmap bmp;
         private void BtnPrintDoc_Click(object sender, EventArgs e)
         {
-            clsStampa print = new clsStampa();
-            print.impostaPagina();
-            print.anteprima(rtxDocumento.Rtf, rtxDocumento.Font);
-            //print.Stampa(rtxDocumento.Rtf, rtxDocumento.Font);
-            /*Graphics g = rtxDocumento.CreateGraphics();
-            bmp = new Bitmap(rtxDocumento.Size.Width, rtxDocumento.Size.Height, g);
-            Graphics mg = Graphics.FromImage(bmp);
-            mg.CopyFromScreen(this.Location.X, this.Location.Y, 0, 0, this.Size);
-            printPreviewDialog1.ShowDialog();*/
-
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            e.Graphics.DrawImage(bmp,0,0);
+            Exception ex = new Exception("Unknown printing error");
+            PrintTools pt = new PrintTools();
+            pt.GeneralPrintForm("Print", rtxDocumento.Rtf,ref ex);
         }
 
         private void btnLeftIndent_Click(object sender, EventArgs e)
@@ -358,6 +345,11 @@ namespace WordPadAM
             {
                 rtxDocumento.ZoomFactor = rtxDocumento.ZoomFactor +(float) -0.5;
             }
+        }
+
+        private void RtxDocumento_TextChanged(object sender, EventArgs e)
+        {
+            this.Text = " ER P A D";
         }
     }
 }

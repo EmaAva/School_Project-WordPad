@@ -48,3 +48,4 @@ C:\Users\Roberto\Desktop\Scuola\4C\School_Project-WordPad-Bugs\WordPadAM\WordPad
 C:\Users\Roberto\Desktop\Scuola\4C\School_Project-WordPad-Bugs\WordPadAM\WordPadAM\obj\Debug\WordPadAM.csproj.CoreCompileInputs.cache
 C:\Users\Roberto\Desktop\Scuola\4C\School_Project-WordPad-Bugs\WordPadAM\WordPadAM\obj\Debug\WordPadAM.exe
 C:\Users\Roberto\Desktop\Scuola\4C\School_Project-WordPad-Bugs\WordPadAM\WordPadAM\obj\Debug\WordPadAM.pdb
+V:\GitHub\School_Project-WordPad\WordPadAM\WordPadAM\obj\Debug\WordPadAM.csproj.CopyComplete
