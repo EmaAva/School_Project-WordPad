@@ -198,8 +198,20 @@ namespace WordPadAM
 
         private void BtnSaveDoc_Click(object sender, EventArgs e)
         {
-            wordPad.salvaConNome(rtxDocumento.Rtf, this);
-
+            SaveFileDialog dlgSalva = new SaveFileDialog();
+            dlgSalva.FileName = "*.rtf";
+            dlgSalva.Filter = "Documento di testo (*.rtf)|*.rtf|Tutti i Files|*.*";
+            DialogResult ris = dlgSalva.ShowDialog();
+            if (ris == DialogResult.OK && dlgSalva.FileName != "")
+            {
+                string s = dlgSalva.FileName;
+                wordPad.scriviSuFile(rtxDocumento.Rtf, s);
+                this.Text = dlgSalva.FileName + " - ER P A D";
+            }
+            else if(ris != DialogResult.Cancel)
+            {
+                MessageBox.Show("Unknown saving error");   
+            }
         }
 
         private void BtnOpenDoc_Click(object sender, EventArgs e)
@@ -214,7 +226,7 @@ namespace WordPadAM
                 rtxDocumento.Rtf = File.ReadAllText(txtFile);
                 this.Text = txtFile + " -  ER P A D";
             }
-            else if (ris != DialogResult.Cancel)
+            else if(ris != DialogResult.Cancel)
             {
                 MessageBox.Show("Warning, an error has occurred");
             }
@@ -229,7 +241,7 @@ namespace WordPadAM
         {
             Exception ex = new Exception("Unknown printing error");
             PrintTools pt = new PrintTools();
-            pt.GeneralPrintForm("Print", rtxDocumento.Rtf, ref ex);
+            pt.GeneralPrintForm("Print", rtxDocumento.Rtf,ref ex);
         }
 
         private void btnLeftIndent_Click(object sender, EventArgs e)
@@ -238,7 +250,7 @@ namespace WordPadAM
             switch (btn.Name)
             {
                 case "L10":
-                    if (rtxDocumento.SelectionIndent == 10)
+                    if (rtxDocumento.SelectionIndent==10)
                     {
                         rtxDocumento.SelectionIndent = 0;
                     }
@@ -288,7 +300,7 @@ namespace WordPadAM
             switch (btn.Name)
             {
                 case "R10":
-                    if (rtxDocumento.SelectionRightIndent == 10)
+                    if (rtxDocumento.SelectionRightIndent==10)
                     {
                         rtxDocumento.SelectionRightIndent = 0;
                     }
@@ -344,7 +356,7 @@ namespace WordPadAM
         {
             if (rtxDocumento.ZoomFactor > 0.515625)
             {
-                rtxDocumento.ZoomFactor = rtxDocumento.ZoomFactor + (float)-0.5;
+                rtxDocumento.ZoomFactor = rtxDocumento.ZoomFactor +(float) -0.5;
             }
         }
 

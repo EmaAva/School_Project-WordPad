@@ -108,23 +108,7 @@ namespace WordPadAM
                 return AdjustedWords.TrimEnd();
             }))();
         }
-        public bool salvaConNome(string testo, WordPadAM wordPadAM)
-        {
-            bool ok = false;
-            SaveFileDialog dlgSalva = new SaveFileDialog();
-            dlgSalva.FileName = "*.rtf";
-            dlgSalva.Filter = "Documento di testo (*.rtf)|*.rtf|Tutti i Files|*.*";
-            DialogResult ris = dlgSalva.ShowDialog();
-            if (ris == DialogResult.OK && dlgSalva.FileName != "")
-            {
-                string s = dlgSalva.FileName;
-                scriviSuFile(testo, s);
-                ok = true;
-                wordPadAM.Text = "ER P A D";
-            }
-            return ok;
-        }
-        private void scriviSuFile(string testo, string s)
+        public void scriviSuFile(string testo, string s)
         {
             if (s != "")
             {
