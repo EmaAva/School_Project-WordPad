@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using printhelper;
+using Microsoft.Office.Interop.Word;
 
 namespace WordPadAM
 {
@@ -19,7 +20,8 @@ namespace WordPadAM
             InitializeComponent();
         }
         clsOperazioni wordPad = new clsOperazioni();
-
+        Document Dom;
+        Microsoft.Office.Interop.Word.Application myWord;
 
         private void WordPadAM_Load(object sender, EventArgs e)
         {
@@ -57,7 +59,7 @@ namespace WordPadAM
         private void btnBold_Click(object sender, EventArgs e)
         {
             FontStyle stileFont;
-            Font currentFont = rtxDocumento.SelectionFont;
+            System.Drawing.Font currentFont = rtxDocumento.SelectionFont;
             if (rtxDocumento.SelectionFont.Bold == true)
             {
                 stileFont = FontStyle.Regular;
@@ -66,13 +68,13 @@ namespace WordPadAM
             {
                 stileFont = FontStyle.Bold;
             }
-            rtxDocumento.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, stileFont);
+            rtxDocumento.SelectionFont = new System.Drawing.Font(currentFont.FontFamily, currentFont.Size, stileFont);
         }
 
         private void btnItalic_Click(object sender, EventArgs e)
         {
             FontStyle stileFont;
-            Font currentFont = rtxDocumento.SelectionFont;
+            System.Drawing.Font currentFont = rtxDocumento.SelectionFont;
             if (rtxDocumento.SelectionFont.Italic == true)
             {
                 stileFont = FontStyle.Regular;
@@ -81,13 +83,13 @@ namespace WordPadAM
             {
                 stileFont = FontStyle.Italic;
             }
-            rtxDocumento.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, stileFont);
+            rtxDocumento.SelectionFont = new System.Drawing.Font(currentFont.FontFamily, currentFont.Size, stileFont);
         }
 
         private void btnUnderline_Click(object sender, EventArgs e)
         {
             FontStyle stileFont;
-            Font currentFont = rtxDocumento.SelectionFont;
+            System.Drawing.Font currentFont = rtxDocumento.SelectionFont;
             if (rtxDocumento.SelectionFont.Underline == true)
             {
                 stileFont = FontStyle.Regular;
@@ -96,7 +98,7 @@ namespace WordPadAM
             {
                 stileFont = FontStyle.Underline;
             }
-            rtxDocumento.SelectionFont = new Font(currentFont.FontFamily, currentFont.Size, stileFont);
+            rtxDocumento.SelectionFont = new System.Drawing.Font(currentFont.FontFamily, currentFont.Size, stileFont);
         }
 
         private void btnFontColor_Click(object sender, EventArgs e)
@@ -143,7 +145,7 @@ namespace WordPadAM
 
             try
             {
-                rtxDocumento.SelectionFont = new Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
+                rtxDocumento.SelectionFont = new System.Drawing.Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
             }
             catch (Exception)
             {
@@ -154,7 +156,7 @@ namespace WordPadAM
 
             try
             {
-                rtxDocumento.SelectionFont = new Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
+                rtxDocumento.SelectionFont = new System.Drawing.Font(cmbFont.Text, Convert.ToInt32(cmbSize.Text));
             }
             catch (Exception)
             {
@@ -164,9 +166,9 @@ namespace WordPadAM
 
         private void BtnJustify_Click(object sender, EventArgs e)
         {
-            Font f = rtxDocumento.Font;
+            System.Drawing.Font f = rtxDocumento.Font;
             rtxDocumento.Text = wordPad.JustifyParagraph(rtxDocumento.Text, rtxDocumento.Font, rtxDocumento.Width);
-            rtxDocumento.Font = new Font(f.Name, f.Size, f.Style);
+            rtxDocumento.Font = new System.Drawing.Font(f.Name, f.Size, f.Style);
         }
 
         private void btnImage_Click(object sender, EventArgs e)
@@ -225,6 +227,9 @@ namespace WordPadAM
                 string txtFile = txt.FileName;
                 rtxDocumento.Rtf = File.ReadAllText(txtFile);
                 this.Text = txtFile + " -  ER P A D";
+                myWord = new Microsoft.Office.Interop.Word.Application();
+                myWord.Visible = false;
+                Dom = myWord.Documents.Open(txtFile);
             }
             else if(ris != DialogResult.Cancel)
             {
@@ -363,6 +368,23 @@ namespace WordPadAM
         private void RtxDocumento_TextChanged(object sender, EventArgs e)
         {
             this.Text = " ER P A D";
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Range myRange;
+            int i = 0;
+            foreach (char item in rtxDocumento.Text)
+            {
+                if (Convert.ToString(item).Contains(txtSearch.Text))
+                {
+                    object start = i - 1;
+                    object end = i + 1;
+                    myRange = Dom.Range(ref start, ref end);
+                    myRange.Underline = WdUnderline.wdUnderlineDashHeavy;
+                }
+                i++;
+            }
         }
     }
 }

@@ -61,3 +61,4 @@ C:\Users\user\Desktop\WordPadAM\WordPadAM\WordPadAM\obj\Debug\WordPadAM.csproj.C
 C:\Users\user\Desktop\WordPadAM\WordPadAM\WordPadAM\obj\Debug\WordPadAM.csproj.CopyComplete
 C:\Users\user\Desktop\WordPadAM\WordPadAM\WordPadAM\obj\Debug\WordPadAM.exe
 C:\Users\user\Desktop\WordPadAM\WordPadAM\WordPadAM\obj\Debug\WordPadAM.pdb
+V:\GitHub\School_Project-WordPad\WordPadAM\WordPadAM\obj\Debug\WordPadAM.csproj.ResolveComReference.cache

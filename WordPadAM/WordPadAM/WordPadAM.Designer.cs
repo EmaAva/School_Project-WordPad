@@ -62,6 +62,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Home = new System.Windows.Forms.TabPage();
             this.View = new System.Windows.Forms.TabPage();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnZoomOut = new System.Windows.Forms.Button();
             this.btnZoomIn = new System.Windows.Forms.Button();
             this.MailTls = new System.Windows.Forms.ToolStrip();
@@ -390,6 +391,7 @@
             // 
             // View
             // 
+            this.View.Controls.Add(this.txtSearch);
             this.View.Controls.Add(this.btnZoomOut);
             this.View.Controls.Add(this.btnZoomIn);
             this.View.Location = new System.Drawing.Point(4, 22);
@@ -399,6 +401,14 @@
             this.View.TabIndex = 1;
             this.View.Text = "View";
             this.View.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(143, 20);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(123, 20);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnZoomOut
             // 
@@ -499,6 +509,7 @@
             this.Home.ResumeLayout(false);
             this.Home.PerformLayout();
             this.View.ResumeLayout(false);
+            this.View.PerformLayout();
             this.MailTls.ResumeLayout(false);
             this.MailTls.PerformLayout();
             this.ResumeLayout(false);
@@ -549,6 +560,7 @@
         private System.Windows.Forms.ToolStripMenuItem R50;
         private System.Windows.Forms.Button btnZoomOut;
         private System.Windows.Forms.Button btnZoomIn;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }
 
